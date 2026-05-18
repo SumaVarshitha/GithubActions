@@ -11,8 +11,9 @@ def check_password(password):
     return "Strong Password"
 
 
-user_password = input("Enter password: ")
+if __name__ == "__main__":
+    user_password = input("Enter password: ")
 
-result = check_password(user_password)
+    result = check_password(user_password)
 
-print(result)
+    print(result)
