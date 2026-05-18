@@ -1,19 +1,22 @@
 def check_password(password):
+
     if len(password) < 8:
-        return "Weak Password"
+        return "Weak Password", "Password should contain at least 8 characters"
 
     if password.islower():
-        return "Add uppercase letters"
+        return "Weak Password", "Add uppercase letters"
 
     if password.isalpha():
-        return "Add numbers"
+        return "Weak Password", "Add numbers"
 
-    return "Strong Password"
+    return "Strong Password", "Good password"
 
 
 if __name__ == "__main__":
+
     user_password = input("Enter password: ")
 
-    result = check_password(user_password)
+    status, suggestion = check_password(user_password)
 
-    print(result)
+    print("Status:", status)
+    print("Suggestion:", suggestion)
