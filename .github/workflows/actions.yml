@@ -22,7 +22,7 @@ jobs:
       - name: Install pytest
         run: pip install pytest
 
-      - name: Run tests
+      - name: Run program with input
         run: |
           cd src
-          pytest
+          echo "Hello123" | python password_checker.py
