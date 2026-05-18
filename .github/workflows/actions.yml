@@ -25,4 +25,4 @@ jobs:
       - name: Run program with input
         run: |
           cd src
-          echo "Hello123" | python password_checker.py
+          echo "Hello" | python password_checker.py
