@@ -1,7 +1,10 @@
+import sys
+
+
 def check_password(password):
 
     if len(password) < 8:
-        return "Weak Password", "Password should contain at least 8 characters"
+        return "Weak Password", "At least 8 characters needed"
 
     if password.islower():
         return "Weak Password", "Add uppercase letters"
@@ -14,9 +17,13 @@ def check_password(password):
 
 if __name__ == "__main__":
 
-    user_password = input("Enter password: ")
+    if len(sys.argv) < 2:
+        print("Usage: python password_checker.py <password>")
+        sys.exit(1)
 
-    status, suggestion = check_password(user_password)
+    password = sys.argv[1]
+
+    status, suggestion = check_password(password)
 
     print("Status:", status)
     print("Suggestion:", suggestion)
